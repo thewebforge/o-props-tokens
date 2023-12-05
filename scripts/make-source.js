@@ -1,7 +1,7 @@
-console.log("Building Props...");
+console.log("Building Source JS files...");
 import fs from "fs";
 
-// Open Props Original Props Packs
+// Open Props Original Extras
 import OpAnimations from "open-props/src/props.animations.js";
 import Aspects from "open-props/src/props.aspects.js";
 import Borders from "open-props/src/props.borders.js";
