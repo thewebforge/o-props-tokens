@@ -20,9 +20,9 @@ import Gradients from "../src/o-props.gradients.js";
 import Shadows from "../src/o-props.shadows.js";
 import SVG from "../src/o-props.svg.js";
 import Zindex from "../src/o-props.zindex.js";
-import MaskEdges from "../src/o-props.masks.edges.js";
-import MaskCornerCuts from "../src/o-props.masks.corner-cuts.js";
-import Duration from "../src/o-props.durations.js";
+import MasksEdges from "../src/o-props.masks.edges.js";
+import MasksCornerCuts from "../src/o-props.masks.corner-cuts.js";
+import Durations from "../src/o-props.durations.js";
 import ObjectPosition from "../src/o-props.object-position.js";
 import Grids from "../src/o-props.grids.js";
 import UIGradients from "../src/o-props.ui-gradients.js";
@@ -34,9 +34,9 @@ import SupportsMedia from "../src/o-props.supports.js";
 import { buildPropsStylesheet } from "./make-stylesheet.js";
 import { buildCustomMediaPropsStylesheet } from "./make-custommedia-stylesheet.js";
 import { toTokens } from "./make-tokens.js";
-import { toObject } from "./make-object.js";
 import { toFigmaTokens } from "./make-figmatokens.js";
 import { toStyleDictionary } from "./make-style-dictionary.js";
+import { mapToObjectNotation } from "./utils.js";
 
 const [, , prefix = "", useWhere, customSubject = "", filePrefix = ""] =
   process.argv;
@@ -45,12 +45,35 @@ const subject = customSubject === "" ? "html" : customSubject;
 const selector = useWhere === "true" ? `:where(${subject})` : subject;
 const pfx = filePrefix ? filePrefix + "-" : "";
 
+const O_Props = mapToObjectNotation({
+  ...Animations,
+  ...Aspects,
+  ...Borders,
+  ...Colors.default,
+  ...ColorsHSL.default,
+  ...Durations,
+  ...Easings,
+  ...Fonts,
+  ...Gradients,
+  ...Grids,
+  ...MasksEdges,
+  ...MasksCornerCuts,
+  ...ObjectPosition,
+  ...Shadoweights,
+  ...Shadows,
+  ...Sizes,
+  ...SVG,
+  ...UIGradients,
+  ...Zindex,
+}, prefix);
+
 const mainbundle = {
   [`${pfx}props.fonts.css`]: Fonts,
   [`${pfx}props.sizes.css`]: Sizes,
   [`${pfx}props.easing.css`]: Easings,
   [`${pfx}props.zindex.css`]: Zindex,
   [`${pfx}props.shadows.css`]: Shadows,
+  [`${pfx}props.shadoweights.css`]: Shadoweights,
   [`${pfx}props.aspect-ratios.css`]: Aspects,
   [`${pfx}props.colors.css`]: Colors.default,
   [`${pfx}props.svg.css`]: SVG,
@@ -82,9 +105,10 @@ const individual_colors_hsl = Object.keys(ColorsHSL)
   );
 
 const individuals = {
-  [`${pfx}props.masks.edges.css`]: MaskEdges,
-  [`${pfx}props.masks.corner-cuts.css`]: MaskCornerCuts,
-  [`${pfx}props.duration.css`]: Duration,
+  [`${pfx}props.masks.edges.css`]: MasksEdges,
+  [`${pfx}props.masks.corner-cuts.css`]: MasksCornerCuts,
+  [`${pfx}props.durations.css`]: Durations,
+  [`${pfx}props.ui-gradients.css`]: UIGradients,
 };
 
 const customMedia = {
@@ -130,13 +154,13 @@ const FigmaTokensSync = fs.createWriteStream(
 FigmaTokensSync.end(JSON.stringify(figmatokensSYNC, null, 2));
 
 const JS = fs.createWriteStream(`../dist/${pfx}props.js`);
-JS.end(`var O_Props = ${JSON.stringify(toObject(), null, 2)}`);
+JS.end(`var O_Props = ${JSON.stringify(O_Props, null, 2)}`);
 
 const ES = fs.createWriteStream(`../dist/${pfx}props.module.js`);
-ES.end(`export default ${JSON.stringify(toObject(), null, 2)}`);
+ES.end(`export default ${JSON.stringify(O_Props, null, 2)}`);
 
 const CJS = fs.createWriteStream(`../dist/${pfx}props.cjs`);
-CJS.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`);
+CJS.end(`module.exports = ${JSON.stringify(O_Props, null, 2)}`);
 
 // const UMD = fs.createWriteStream(`../dist/${pfx}props.umd.js`)
 // UMD.end(`module.exports = ${JSON.stringify(toObject(), null, 2)}`)

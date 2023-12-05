@@ -27,7 +27,7 @@ export const flexCards = (nb = 3) => {
   for (let i = 1; i <= nb; i++) {
     grids[`--flex-card-width-${i}`] = `var(--size-header-${i})`;
     grids[`--flex-card-${i}`] = `0 1 var(--flex-card-width-${i})`;
-    grids[`--flex-card-stretch-${i}`] = `1 1 var(--o-flex-card-width-${i})`;
+    grids[`--flex-card-stretch-${i}`] = `1 1 var(--flex-card-width-${i})`;
   }
   return grids;
 };
@@ -39,8 +39,8 @@ export const stack = {
 
 // Holy Grail Props
 export const holyGrail = {
-  "--o-holy-grail-template": "auto 1fr auto / auto 1fr auto",
-  "--o-holy-grail-template-areas":
+  "--holy-grail-template": "auto 1fr auto / auto 1fr auto",
+  "--holy-grail-template-areas":
     "head head head left main right foot foot foot",
 };
 
@@ -70,7 +70,7 @@ export const ramFitAndFill = (nb = 3) => {
     ] = `repeat(auto-fit, minmax(var(--size-header-${i}), 1fr))`;
     grids[
       `--ram-fill-${i}`
-    ] = `repeat(auto-fill, minmax(var(--o-size-header-${i}), 1fr))`;
+    ] = `repeat(auto-fill, minmax(var(--size-header-${i}), 1fr))`;
   }
   return grids;
 };

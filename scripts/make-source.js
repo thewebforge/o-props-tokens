@@ -130,8 +130,6 @@ Object.entries({
         keyframesDef.slice(0, 12) + prefix + "-" + keyframesDef.slice(12);
       let keyframes =
         prefix && prefix !== "''" ? prefixedKeyframes : keyframesDef;
-      if (keyframes.includes("(--"))
-        keyframes = keyframes.replace(/\(--/g, `(--${prefix}-`);
       value = `\`${keyframes}\``;
     }
 
