@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "declaration": true,
+		"emitDeclarationOnly": true,
+		"esModuleInterop": true,
+    "target": "esnext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "forceConsistentCasingInFileNames": true,
+    "types": [
+      "bun-types" // add Bun global
+    ]
+  },
+  "include": ["dist/o-props.module.js", "src/o-props.*.js"],
+	"exclude": ["node_modules", "src/*.src.js"]
+}
