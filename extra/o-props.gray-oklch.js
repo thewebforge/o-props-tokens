@@ -1,0 +1,18 @@
+export default {
+  "--gray-0-@media:p3": "oklch(99% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-1-@media:p3": "oklch(95% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-2-@media:p3": "oklch(88% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-3-@media:p3": "oklch(80% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-4-@media:p3": "oklch(74% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-5-@media:p3": "oklch(68% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-6-@media:p3": "oklch(63% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-7-@media:p3": "oklch(58% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-8-@media:p3": "oklch(53% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-9-@media:p3": "oklch(49% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-10-@media:p3": "oklch(43% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-11-@media:p3": "oklch(37% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-12-@media:p3": "oklch(31% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-13-@media:p3": "oklch(25% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-14-@media:p3": "oklch(18% var(--gray-chroma, none) var(--gray-hue, none))",
+  "--gray-15-@media:p3": "oklch(10% var(--gray-chroma, none) var(--gray-hue, none))",
+};

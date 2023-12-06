@@ -15,7 +15,7 @@ export const buildPropsStylesheet = (
     file.write(`@import './${pfx}props.media.css';\n\n`);
   }
 
-  if (filename.includes("neon")) {
+  if (filename.includes("neon") || filename.includes("oklch")) {
     file.write(`@import './${pfx}props.media.css';\n`);
     file.write(`@import './${pfx}props.supports.css';\n\n`);
   }
@@ -59,8 +59,9 @@ ${dark_propsMeta}
 }`;
   }
 
-  if (filename.includes("neon")) {
+  if (filename.includes("neon") || filename.includes("oklch")) {
     let p3_propsMeta = ``;
+    const supportsQuery = filename.includes("neon") ? "color: color(display-p3 0 0 0)" : "color: oklch(0% 0 0)"
     let p3_props = Object.entries(props).filter(([prop, val]) =>
       prop.includes("-@media:p3")
     );
@@ -75,7 +76,7 @@ ${dark_propsMeta}
     });
     appendedMeta += `
 @media (--${prefix}-HDcolor) {
-  @supports (color: color(display-p3 0 0 0)) {
+  @supports (${supportsQuery}) {
     ${selector} {
 ${p3_propsMeta}
     }

@@ -248,6 +248,7 @@
     "lib:colors": "postcss src/o-props.colors.css -o ./dist/o-props.colors.min.css",
     "lib:colors-hsl": "postcss src/o-props.colors-hsl.css -o ./dist/o-props.colors-hsl.min.css",
     "lib:colors:gray": "postcss src/o-props.gray.css -o ./dist/o-props.gray.min.css",
+    "lib:colors:hd-gray": "postcss src/o-props.gray-oklch.css -o ./dist/o-props.gray-oklch.min.css",
     "lib:colors:gray-hsl": "postcss src/o-props.gray-hsl.css -o ./dist/o-props.gray-hsl.min.css",
     "lib:colors:stone": "postcss src/o-props.stone.css -o ./dist/o-props.stone.min.css",
     "lib:colors:stone-hsl": "postcss src/o-props.stone-hsl.css -o ./dist/o-props.stone-hsl.min.css",

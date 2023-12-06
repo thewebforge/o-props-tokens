@@ -10,7 +10,7 @@ import ColorHues from "open-props/src/props.colors-oklch-hues.js";
 import ColorsOKLCH from "open-props/src/props.colors-oklch.js";
 import * as Colors from "open-props/src/props.colors.js";
 import Sizes from "open-props/src/props.sizes.js";
-import ColorsOKLCHgray from "open-props/src/props.gray-oklch.js";
+import OpColorsOKLCHgray from "open-props/src/props.gray-oklch.js";
 import OpFonts from "open-props/src/props.fonts.js";
 import Easings from "open-props/src/props.easing.js";
 import OpGradients from "open-props/src/props.gradients.js";
@@ -35,6 +35,7 @@ import { SupportsMedia } from "../extra/o-props.supports.js";
 
 // Additions to Props Packs
 import CustomAnimations from "../extra/o-props.animations.js";
+import CustomColorsOKLCHgray from "../extra/o-props.gray-oklch.js";
 import CustomFonts from "../extra/o-props.fonts.js";
 import CustomGradients from "../extra/o-props.gradients.js";
 import CustomSVG from "../extra/o-props.svg.js";
@@ -43,6 +44,7 @@ import CustomCustomMedia from "../extra/o-props.media.js";
 // Merge Props Packs
 const Animations = { ...OpAnimations, ...CustomAnimations };
 const CustomMedia = { ...OpCustomMedia, ...CustomCustomMedia };
+const ColorsOKLCHgray = { ...CustomColorsOKLCHgray };
 const Fonts = { ...OpFonts, ...CustomFonts };
 const Gradients = { ...OpGradients, ...CustomGradients };
 const SVG = { ...OpSVG, ...CustomSVG };
