@@ -15,6 +15,11 @@ export const buildPropsStylesheet = (
     file.write(`@import './${pfx}props.media.css';\n\n`);
   }
 
+  if (filename.includes("neon")) {
+    file.write(`@import './${pfx}props.media.css';\n`);
+    file.write(`@import './${pfx}props.supports.css';\n\n`);
+  }
+
   if (filename.includes("shadows")) {
     let dark_propsMeta = ``;
     let dark_props = Object.entries(props).filter(([prop, val]) =>
@@ -50,6 +55,30 @@ export const buildPropsStylesheet = (
 @media (--${prefix}-OSdark) {
   ${selector} {
 ${dark_propsMeta}
+  }
+}`;
+  }
+
+  if (filename.includes("neon")) {
+    let p3_propsMeta = ``;
+    let p3_props = Object.entries(props).filter(([prop, val]) =>
+      prop.includes("-@media:p3")
+    );
+    p3_props.forEach(([prop, val], index) => {
+      let v = props[prop];
+      let extract = prop.slice(4, prop.length - "-@media:p3".length);
+      let p = `--${prefix}-${extract}`;
+
+      p3_propsMeta += `      ${p}: ${val};${
+        index !== p3_props.length - 1 ? "\n" : ""
+      }`;
+    });
+    appendedMeta += `
+@media (--${prefix}-HDcolor) {
+  @supports (color: color(display-p3 0 0 0)) {
+    ${selector} {
+${p3_propsMeta}
+    }
   }
 }`;
   }
@@ -92,6 +121,7 @@ ${dark_propsMeta}
       }
     });
   }
+
   file.write("}\n");
   file.end(appendedMeta);
 };

@@ -7,26 +7,27 @@ import fs from "fs";
 // Open Props Props Packs
 import Animations from "../src/o-props.animations.js";
 import Aspects from "../src/o-props.aspect-ratios.js";
-import Sizes from "../src/o-props.sizes.js";
+import Borders from "../src/o-props.borders.js";
 import * as Colors from "../src/o-props.colors.js";
 import * as ColorsHSL from "../src/o-props.colors-hsl.js";
+import ColorsNeon from "../src/o-props.colors-neon.js";
 import ColorsOKLCH from "../src/o-props.colors-oklch.js";
 import ColorsOKLCHgray from "../src/o-props.gray-oklch.js";
 import ColorHues from "../src/o-props.colors-oklch-hues.js";
-import Fonts from "../src/o-props.fonts.js";
-import Borders from "../src/o-props.borders.js";
+import Durations from "../src/o-props.durations.js";
 import Easings from "../src/o-props.easing.js";
+import Fonts from "../src/o-props.fonts.js";
 import Gradients from "../src/o-props.gradients.js";
-import Shadows from "../src/o-props.shadows.js";
-import SVG from "../src/o-props.svg.js";
-import Zindex from "../src/o-props.zindex.js";
+import Grids from "../src/o-props.grids.js";
 import MasksEdges from "../src/o-props.masks.edges.js";
 import MasksCornerCuts from "../src/o-props.masks.corner-cuts.js";
-import Durations from "../src/o-props.durations.js";
 import ObjectPosition from "../src/o-props.object-position.js";
-import Grids from "../src/o-props.grids.js";
-import UIGradients from "../src/o-props.ui-gradients.js";
 import Shadoweights from "../src/o-props.shadoweights.js";
+import Shadows from "../src/o-props.shadows.js";
+import Sizes from "../src/o-props.sizes.js";
+import SVG from "../src/o-props.svg.js";
+import UIGradients from "../src/o-props.ui-gradients.js";
+import Zindex from "../src/o-props.zindex.js";
 import CustomMedia from "../src/o-props.media.js";
 import SupportsMedia from "../src/o-props.supports.js";
 
@@ -51,6 +52,10 @@ const O_Props = mapToObjectNotation({
   ...Borders,
   ...Colors.default,
   ...ColorsHSL.default,
+  ...ColorsNeon,
+  ...ColorsOKLCH,
+  ...ColorsOKLCHgray,
+  ...ColorHues,
   ...Durations,
   ...Easings,
   ...Fonts,
@@ -76,6 +81,7 @@ const mainbundle = {
   [`${pfx}props.shadoweights.css`]: Shadoweights,
   [`${pfx}props.aspect-ratios.css`]: Aspects,
   [`${pfx}props.colors.css`]: Colors.default,
+  [`${pfx}props.colors-neon.css`]: ColorsNeon,
   [`${pfx}props.svg.css`]: SVG,
   [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,

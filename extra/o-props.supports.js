@@ -6,4 +6,5 @@ export const SupportsMedia = {
     "(-webkit-app-region: inherit) and (not (container-type: none))",
   "--chromiumONLY": "(-webkit-app-region: inherit) and (container-type: none)",
   "--webkitONLY": "(alt: inherit) and (not (-apple-pay-button-style: inherit))",
+  "--colorP3": "(color: color(display-p3 0 0 0))",
 };
