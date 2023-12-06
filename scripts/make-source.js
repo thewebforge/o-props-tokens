@@ -1,7 +1,7 @@
 console.log("Building Source JS files...");
 import fs from "fs";
 
-// Open Props Original Extras
+// Open Props Original Packs
 import OpAnimations from "open-props/src/props.animations.js";
 import Aspects from "open-props/src/props.aspects.js";
 import Borders from "open-props/src/props.borders.js";
@@ -19,29 +19,33 @@ import OpSVG from "open-props/src/props.svg.js";
 import Zindex from "open-props/src/props.zindex.js";
 import MaskEdges from "open-props/src/props.masks.edges.js";
 import MaskCornerCuts from "open-props/src/props.masks.corner-cuts.js";
+// Open Props Original Media Queries
+import { CustomMedia as OpCustomMedia } from "open-props/src/props.media.js";
 
 // Custom Props Props Packs
 import Duration from "../extra/o-props.durations.js";
+import ColorsNeon from "../extra/o-props.colors-neon.js";
 import Grids from "../extra/o-props.grids.js";
 import ObjectPosition from "../extra/o-props.object-position.js";
 import Shadoweights from "../extra/o-props.shadoweights.js";
 import UIGradients from "../extra/o-props.ui-gradients.js";
+
+// Custom Props Media Queries
+import { SupportsMedia } from "../extra/o-props.supports.js";
 
 // Additions to Props Packs
 import CustomAnimations from "../extra/o-props.animations.js";
 import CustomFonts from "../extra/o-props.fonts.js";
 import CustomGradients from "../extra/o-props.gradients.js";
 import CustomSVG from "../extra/o-props.svg.js";
+import CustomCustomMedia from "../extra/o-props.media.js";
 
 // Merge Props Packs
 const Animations = { ...OpAnimations, ...CustomAnimations };
+const CustomMedia = { ...OpCustomMedia, ...CustomCustomMedia };
 const Fonts = { ...OpFonts, ...CustomFonts };
 const Gradients = { ...OpGradients, ...CustomGradients };
 const SVG = { ...OpSVG, ...CustomSVG };
-
-// Custom Media Queries
-import { CustomMedia } from "open-props/src/props.media.js";
-import { SupportsMedia } from "../extra/o-props.supports.js";
 
 // Get args from command line
 const [, , prefix = ""] = process.argv;
@@ -55,6 +59,7 @@ const singles = {
   [`${pfx}props.animations.js`]: Animations,
   [`${pfx}props.aspect-ratios.js`]: Aspects,
   [`${pfx}props.borders.js`]: Borders,
+  [`${pfx}props.colors-neon.js`]: ColorsNeon,
   [`${pfx}props.colors-oklch-hues.js`]: ColorHues,
   [`${pfx}props.colors-oklch.js`]: ColorsOKLCH,
   [`${pfx}props.gray-oklch.js`]: ColorsOKLCHgray,
