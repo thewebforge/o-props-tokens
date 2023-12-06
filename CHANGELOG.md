@@ -1,3 +1,11 @@
+## v1.2.0 (2023-12-06)
+
+### Feat
+
+- **colors**: add neon colors
+- **colors**: add neon colors source
+- **customMedia**: fix --HCcolor (PR pending at Open Props) and add --forcedColors
+
 ## v1.1.0 (2023-12-05)
 
 ### Feat
