@@ -1,3 +1,9 @@
+## v1.2.1 (2023-12-06)
+
+### Fix
+
+- **HDGrays**: fix hd overriding sd grays
+
 ## v1.2.0 (2023-12-06)
 
 ### Feat
