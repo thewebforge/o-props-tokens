@@ -1,3 +1,13 @@
+## v1.3.0 (2023-12-08)
+
+### Feat
+
+- **gradients**: split gradients noises ans filters into their own files for better granularity
+
+### Refactor
+
+- **custom-media**: simplify as customizations have been merged in open props
+
 ## v1.2.1 (2023-12-06)
 
 ### Fix
