@@ -16,11 +16,13 @@ import ColorsOKLCHgray from "../src/o-props.gray-oklch.js";
 import ColorHues from "../src/o-props.colors-oklch-hues.js";
 import Durations from "../src/o-props.durations.js";
 import Easings from "../src/o-props.easing.js";
+import Filters from "../src/o-props.filters.js";
 import Fonts from "../src/o-props.fonts.js";
 import Gradients from "../src/o-props.gradients.js";
 import Grids from "../src/o-props.grids.js";
 import MasksEdges from "../src/o-props.masks.edges.js";
 import MasksCornerCuts from "../src/o-props.masks.corner-cuts.js";
+import Noises from "../src/o-props.noises.js";
 import ObjectPosition from "../src/o-props.object-position.js";
 import Shadoweights from "../src/o-props.shadoweights.js";
 import Shadows from "../src/o-props.shadows.js";
@@ -58,11 +60,13 @@ const O_Props = mapToObjectNotation({
   ...ColorHues,
   ...Durations,
   ...Easings,
+  ...Filters,
   ...Fonts,
   ...Gradients,
   ...Grids,
   ...MasksEdges,
   ...MasksCornerCuts,
+  ...Noises,
   ...ObjectPosition,
   ...Shadoweights,
   ...Shadows,
@@ -73,21 +77,23 @@ const O_Props = mapToObjectNotation({
 }, prefix);
 
 const mainbundle = {
-  [`${pfx}props.fonts.css`]: Fonts,
-  [`${pfx}props.sizes.css`]: Sizes,
-  [`${pfx}props.easing.css`]: Easings,
-  [`${pfx}props.zindex.css`]: Zindex,
-  [`${pfx}props.shadows.css`]: Shadows,
-  [`${pfx}props.shadoweights.css`]: Shadoweights,
   [`${pfx}props.aspect-ratios.css`]: Aspects,
-  [`${pfx}props.colors.css`]: Colors.default,
-  [`${pfx}props.colors-neon.css`]: ColorsNeon,
-  [`${pfx}props.svg.css`]: SVG,
-  [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.animations.css`]: Animations,
   [`${pfx}props.borders.css`]: Borders,
-  [`${pfx}props.object-position.css`]: ObjectPosition,
+  [`${pfx}props.colors.css`]: Colors.default,
+  [`${pfx}props.colors-neon.css`]: ColorsNeon,
+  [`${pfx}props.easing.css`]: Easings,
+  [`${pfx}props.fonts.css`]: Fonts,
+  [`${pfx}props.filters.css`]: Filters,
+  [`${pfx}props.gradients.css`]: Gradients,
   [`${pfx}props.grids.css`]: Grids,
+  [`${pfx}props.noises.css`]: Noises,
+  [`${pfx}props.object-position.css`]: ObjectPosition,
+  [`${pfx}props.shadoweights.css`]: Shadoweights,
+  [`${pfx}props.shadows.css`]: Shadows,
+  [`${pfx}props.sizes.css`]: Sizes,
+  [`${pfx}props.svg.css`]: SVG,
+  [`${pfx}props.zindex.css`]: Zindex,
 };
 
 const individual_colors = Object.keys(Colors)
@@ -129,6 +135,8 @@ const jsonbundle = Object.entries({
   ...Easings,
   ...Zindex,
   ...Aspects,
+  ...Noises,
+  ...Filters,
   ...Gradients,
   ...Borders,
 }).reverse();

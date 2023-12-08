@@ -20,12 +20,14 @@ import Zindex from "open-props/src/props.zindex.js";
 import MaskEdges from "open-props/src/props.masks.edges.js";
 import MaskCornerCuts from "open-props/src/props.masks.corner-cuts.js";
 // Open Props Original Media Queries
-import { CustomMedia as OpCustomMedia } from "open-props/src/props.media.js";
+import { CustomMedia } from "open-props/src/props.media.js";
 
 // Custom Props Props Packs
 import Duration from "../extra/o-props.durations.js";
 import ColorsNeon from "../extra/o-props.colors-neon.js";
+import Filters from "../extra/o-props.filters.js";
 import Grids from "../extra/o-props.grids.js";
+import Noises from "../extra/o-props.noises.js";
 import ObjectPosition from "../extra/o-props.object-position.js";
 import Shadoweights from "../extra/o-props.shadoweights.js";
 import UIGradients from "../extra/o-props.ui-gradients.js";
@@ -39,14 +41,12 @@ import CustomColorsOKLCHgray from "../extra/o-props.gray-oklch.js";
 import CustomFonts from "../extra/o-props.fonts.js";
 import CustomGradients from "../extra/o-props.gradients.js";
 import CustomSVG from "../extra/o-props.svg.js";
-import CustomCustomMedia from "../extra/o-props.media.js";
 
 // Merge Props Packs
 const Animations = { ...OpAnimations, ...CustomAnimations };
-const CustomMedia = { ...OpCustomMedia, ...CustomCustomMedia };
 const ColorsOKLCHgray = { ...CustomColorsOKLCHgray };
 const Fonts = { ...OpFonts, ...CustomFonts };
-const Gradients = { ...OpGradients, ...CustomGradients };
+const Gradients = {...CustomGradients };
 const SVG = { ...OpSVG, ...CustomSVG };
 
 // Get args from command line
@@ -68,11 +68,13 @@ const singles = {
   [`${pfx}props.media.js`]: CustomMedia,
   [`${pfx}props.durations.js`]: Duration,
   [`${pfx}props.easing.js`]: Easings,
+  [`${pfx}props.filters.js`]: Filters,
   [`${pfx}props.fonts.js`]: Fonts,
   [`${pfx}props.gradients.js`]: Gradients,
   [`${pfx}props.grids.js`]: Grids,
   [`${pfx}props.masks.edges.js`]: MaskEdges,
   [`${pfx}props.masks.corner-cuts.js`]: MaskCornerCuts,
+  [`${pfx}props.noises.js`]: Noises,
   [`${pfx}props.object-position.js`]: ObjectPosition,
   [`${pfx}props.shadoweights.js`]: Shadoweights,
   [`${pfx}props.shadows.js`]: Shadows,
