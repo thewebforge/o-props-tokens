@@ -4,7 +4,7 @@
   "description": "My custom version of the awesome Open Props prefixed as I like it and with personal props additions",
   "author": "C\u00e9dric Bontems <cedric@thewebforge.dev> (https://thewebforge.dev/)",
   "license": "MIT",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/thewebforge/o-props-tokens"
