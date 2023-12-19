@@ -12,7 +12,7 @@ export default {
   "--forced-gray-text": "GrayText", //Text color for disabled items (e.g. a disabled control)
   "--forced-highlight": "Highlight", //Background of selected items
   "--forced-highlight-text": "HighlightText", //Text color of selected items
-  "--forced-link-text": "InactiveBorder", //Border color of inactive window borders
+  "--forced-link-text": "LinkText", //Text of non-active, non-visited links
   "--forced-mark": "Mark", //Background of text that has been specially marked (such as by the HTML mark element)  
   "--forced-mark-text": "MarkText", //Text that has been specially marked (such as by the HTML mark element)
   "--forced-visited-text": "VisitedText", //Text of visited links 
