@@ -1,4 +1,4 @@
-# o-props
+# o-props-tokens
 
 To install dependencies:
 
