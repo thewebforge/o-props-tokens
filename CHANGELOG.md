@@ -1,3 +1,9 @@
+## v1.4.0 (2023-12-19)
+
+### Feat
+
+- **a11y**: add forced colors props mapped to corresponding <system-colors> CSS data type
+
 ## v1.3.0 (2023-12-08)
 
 ### Feat
