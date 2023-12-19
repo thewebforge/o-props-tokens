@@ -5,6 +5,7 @@ console.log("Building Props...");
 import fs from "fs";
 
 // Open Props Props Packs
+import A11y from "../src/o-props.a11y.js";
 import Animations from "../src/o-props.animations.js";
 import Aspects from "../src/o-props.aspect-ratios.js";
 import Borders from "../src/o-props.borders.js";
@@ -49,6 +50,7 @@ const selector = useWhere === "true" ? `:where(${subject})` : subject;
 const pfx = filePrefix ? filePrefix + "-" : "";
 
 const O_Props = mapToObjectNotation({
+  ...A11y,
   ...Animations,
   ...Aspects,
   ...Borders,
@@ -77,8 +79,8 @@ const O_Props = mapToObjectNotation({
 }, prefix);
 
 const mainbundle = {
-  [`${pfx}props.aspect-ratios.css`]: Aspects,
   [`${pfx}props.animations.css`]: Animations,
+  [`${pfx}props.aspect-ratios.css`]: Aspects,
   [`${pfx}props.borders.css`]: Borders,
   [`${pfx}props.colors.css`]: Colors.default,
   [`${pfx}props.colors-neon.css`]: ColorsNeon,
@@ -117,9 +119,10 @@ const individual_colors_hsl = Object.keys(ColorsHSL)
   );
 
 const individuals = {
-  [`${pfx}props.masks.edges.css`]: MasksEdges,
-  [`${pfx}props.masks.corner-cuts.css`]: MasksCornerCuts,
+  [`${pfx}props.a11y.css`]: A11y,
   [`${pfx}props.durations.css`]: Durations,
+  [`${pfx}props.masks.corner-cuts.css`]: MasksCornerCuts,
+  [`${pfx}props.masks.edges.css`]: MasksEdges,
   [`${pfx}props.ui-gradients.css`]: UIGradients,
 };
 

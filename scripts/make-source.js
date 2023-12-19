@@ -23,6 +23,7 @@ import MaskCornerCuts from "open-props/src/props.masks.corner-cuts.js";
 import { CustomMedia } from "open-props/src/props.media.js";
 
 // Custom Props Props Packs
+import A11y from "../extra/o-props.accessibility.js";
 import Duration from "../extra/o-props.durations.js";
 import ColorsNeon from "../extra/o-props.colors-neon.js";
 import Filters from "../extra/o-props.filters.js";
@@ -58,6 +59,7 @@ const sets = {
   [`${pfx}props.colors-hsl.js`]: ColorsHSL,
 };
 const singles = {
+  [`${pfx}props.a11y.js`]: A11y,
   [`${pfx}props.animations.js`]: Animations,
   [`${pfx}props.aspect-ratios.js`]: Aspects,
   [`${pfx}props.borders.js`]: Borders,
@@ -193,6 +195,7 @@ Object.entries(sets).forEach(([filename, set]) => {
 
 // Make index.js
 const index = fs.createWriteStream("../src/index.js");
+index.write(`import A11y from "./${pfx}props.a11y.js";\n`);
 index.write(`import Animations from "./${pfx}props.animations.js";\n`);
 index.write(`import Aspects from "./${pfx}props.aspect-ratios.js";\n`);
 index.write(`import Borders from "./${pfx}props.borders.js";\n`);
@@ -225,6 +228,7 @@ index.write(`    props[camelize(prop)] = props[prop]\n`);
 index.write(`  return props;\n`);
 index.write(`};\n\n`);
 index.write(`const O_Props = mapToObjectNotation({\n`);
+index.write(`  ...A11y,\n`);
 index.write(`  ...Animations,\n`);
 index.write(`  ...Aspects,\n`);
 index.write(`  ...Borders,\n`);
