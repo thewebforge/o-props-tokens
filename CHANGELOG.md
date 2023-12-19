@@ -1,3 +1,9 @@
+## v1.4.1 (2023-12-19)
+
+### Fix
+
+- **a11y**: fix forced link text color definition
+
 ## v1.4.0 (2023-12-19)
 
 ### Feat
