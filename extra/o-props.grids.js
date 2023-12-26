@@ -2,8 +2,9 @@
 export const basicGrids = (nbCols = 12) => {
   const grids = {};
   for (let i = 1; i <= nbCols; i++) {
-    grids[`--grid-columns-${i}`] = `repeat(${i}, minmax(0, 1fr))`;
-    grids[`--grid-rows-${i}`] = `repeat(${i}, minmax(0, 1fr))`;
+    grids[`--grid-${i}`] = `repeat(${i}, [col-start] minmax(0, 1fr) [col-end])`;
+    // grids[`--grid-columns-${i}`] = `repeat(${i}, minmax(0, 1fr))`;
+    // grids[`--grid-rows-${i}`] = `repeat(${i}, minmax(0, 1fr))`;
   }
   return grids;
 };
