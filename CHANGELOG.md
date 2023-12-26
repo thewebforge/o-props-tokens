@@ -1,3 +1,9 @@
+## v1.4.3 (2023-12-26)
+
+### Fix
+
+- **grids**: fix name and named lines
+
 ## v1.4.2 (2023-12-19)
 
 ### Fix
