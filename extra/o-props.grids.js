@@ -15,8 +15,9 @@ export const asymetricalGrids = (maxParts = 5) => {
   for (let i = 1; i <= maxParts; i++) {
     for (let j = 1; j <= maxParts; j++) {
       if (i === j) continue;
-      grids[`--grid-columns-${i}-${j}`] = `${i}fr ${j}fr`;
-      grids[`--grid-rows-${i}-${j}`] = `${i}fr ${j}fr`;
+      grids[`--grid-${i}-${j}`] = `[left-col-start] ${i}fr [left-col-end right-col-start] ${j}fr [right-col-end]`;
+      // grids[`--grid-columns-${i}-${j}`] = `${i}fr ${j}fr`;
+      // grids[`--grid-rows-${i}-${j}`] = `${i}fr ${j}fr`;
     }
   }
   return grids;
@@ -36,6 +37,8 @@ export const flexCards = (nb = 3) => {
 // Stack Props
 export const stack = {
   "--stack-template": "auto 1fr auto",
+  "--hstack-template": "[page-start left-sidebar-start] auto [left-sidebar-end content-start] 1fr [content-end right-sidebar-start] auto [right-sidebar-end page-end]",
+  "--vstack-template": "[page-start header-start] auto [header-end content-start] 1fr [content-end footer-start] auto [footer-end page-end]",
 };
 
 // Holy Grail Props
@@ -49,8 +52,8 @@ export const holyGrail = {
 export const sidebars = (nb = 3) => {
   const grids = {};
   for (let i = 1; i <= nb; i++) {
-    grids[`--left-sidebar-${i}`] = `minmax(var(--size-header-${i}), 25%) 1fr`;
-    grids[`--right-sidebar-${i}`] = `1fr minmax(var(--size-header-${i}), 25%)`;
+    grids[`--left-sidebar-${i}`] = `[page-start sidebar-start] minmax(var(--size-header-${i}), 25%) [sidebar-end content-start] 1fr [content-end page-end]`;
+    grids[`--right-sidebar-${i}`] = `[page-start content-start] 1fr [content-end sidebar-start] minmax(var(--size-header-${i}), 25%) [sidebar-end page-end]`;
   }
   return grids;
 };
@@ -59,7 +62,6 @@ export const sidebars = (nb = 3) => {
 export const headersAndFooters = {
   "--grid-rows-header": "auto 1fr",
   "--grid-rows-footer": "1fr auto",
-  "--grid-rows-header-and-footer": "auto 1fr auto",
 };
 
 // Ram-fit and Ram-fill Props
